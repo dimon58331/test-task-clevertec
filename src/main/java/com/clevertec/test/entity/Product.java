@@ -25,6 +25,14 @@ public class Product {
     public Product() {
     }
 
+    public Product(int id, String name, double discount, int discountQuantity, double price) {
+        this.id = id;
+        this.name = name;
+        this.discount = discount;
+        this.discountQuantity = discountQuantity;
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }

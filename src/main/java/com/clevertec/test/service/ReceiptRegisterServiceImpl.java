@@ -79,6 +79,7 @@ public class ReceiptRegisterServiceImpl implements IReceiptRegisterService {
         for(int id : receipt.getProducts().keySet()){
 
             Product product = productAndDiscountService.getProductFromDataBaseByID(id);
+
             if (receipt.getProducts().get(id) <= product.getDiscountQuantity()
                     || product.getDiscount() == 0) {
                 product.setDiscount(discountCard.getDiscount());
