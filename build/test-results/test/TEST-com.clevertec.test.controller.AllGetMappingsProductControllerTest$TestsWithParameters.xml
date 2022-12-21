@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.clevertec.test.controller.AllGetMappingsProductControllerTest$TestsWithParameters" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-12-21T00:10:43" hostname="DMITRY" time="0.902">
+  <properties/>
+  <testcase name="[1] 0" classname="com.clevertec.test.controller.AllGetMappingsProductControllerTest$TestsWithParameters" time="0.331"/>
+  <testcase name="[2] -1" classname="com.clevertec.test.controller.AllGetMappingsProductControllerTest$TestsWithParameters" time="0.016"/>
+  <testcase name="[1] null, null, 0, 0, 0" classname="com.clevertec.test.controller.AllGetMappingsProductControllerTest$TestsWithParameters" time="0.158"/>
+  <testcase name="[2] null, potato, -2, 2, 2" classname="com.clevertec.test.controller.AllGetMappingsProductControllerTest$TestsWithParameters" time="0.014"/>
+  <testcase name="[3] -3, potato, 2, -2, 2" classname="com.clevertec.test.controller.AllGetMappingsProductControllerTest$TestsWithParameters" time="0.017"/>
+  <testcase name="[4] null, potato, 2, 2, -2" classname="com.clevertec.test.controller.AllGetMappingsProductControllerTest$TestsWithParameters" time="0.017"/>
+  <testcase name="[1] 0" classname="com.clevertec.test.controller.AllGetMappingsProductControllerTest$TestsWithParameters" time="0.014"/>
+  <testcase name="[2] -1" classname="com.clevertec.test.controller.AllGetMappingsProductControllerTest$TestsWithParameters" time="0.035"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

@@ -33,6 +33,10 @@ public class ReceiptRegisterServiceImpl implements IReceiptRegisterService {
         if (quantity <= 0){
             throw new InvalidQuantityException();
         }
+        if (id <= 0){
+            throw new InvalidIDException();
+        }
+
 
         if (receipt.getProducts().containsKey(id)){
             receipt.getProducts().replace(id, quantity + receipt.getProducts().get(id));
@@ -107,7 +111,7 @@ public class ReceiptRegisterServiceImpl implements IReceiptRegisterService {
         receiptInfo += "-------------------------------------------------------------------------------\n";
 
         if (discountCard != null && discountCard.isActive()){
-            receiptInfo += "DISCOUNT CARD ID = " + discountCard.getNumberCard() + ", DISCOUNT = "
+            receiptInfo += "DISCOUNT CARD NUMBER = " + discountCard.getNumberCard() + ", DISCOUNT = "
                     + String.format("%s", df.format(discountCard.getDiscount())) + "%\n";
         }
 

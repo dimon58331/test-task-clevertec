@@ -18,4 +18,6 @@ public interface IProductAndDiscountService {
     public DiscountCard getDiscountCardFromDataBaseByID(int id);
     public void saveDiscountCardToDataBase(DiscountCard discountCard);
     public void deleteDiscountCardFromDataBaseByCardNumber(int cardNumber);
+
+    public DiscountCard getDiscountCardFromDataBaseByCardNumber(int cardNumber);
 }

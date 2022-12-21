@@ -79,4 +79,10 @@ public class ProductAndDiscountServiceImpl implements IProductAndDiscountService
     public void deleteDiscountCardFromDataBaseByCardNumber(int cardNumber) {
         discountDAO.deleteDiscountCardFromDataBaseByID(cardNumber);
     }
+
+    @Override
+    @Transactional
+    public DiscountCard getDiscountCardFromDataBaseByCardNumber(int cardNumber) {
+        return discountDAO.getDiscountCardFromDataBaseByCardNumber(cardNumber);
+    }
 }

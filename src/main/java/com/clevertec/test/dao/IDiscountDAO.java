@@ -9,4 +9,5 @@ public interface IDiscountDAO {
     public DiscountCard getDiscountCardFromDataBaseByID(int id);
     public void saveDiscountCardToDataBase(DiscountCard discountCard);
     public void deleteDiscountCardFromDataBaseByID(int id);
+    public DiscountCard getDiscountCardFromDataBaseByCardNumber(int cardNumber);
 }

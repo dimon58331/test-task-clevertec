@@ -2,6 +2,7 @@ package com.clevertec.test.dao;
 
 import com.clevertec.test.entity.DiscountCard;
 import com.clevertec.test.entity.Product;
+import com.clevertec.test.exception.InvalidDiscountCardException;
 import com.clevertec.test.exception.InvalidIDException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -27,7 +28,12 @@ public class DiscountDAOImpl implements IDiscountDAO{
 
     @Override
     public DiscountCard getDiscountCardFromDataBaseByID(int id) {
+        if (id <= 0){
+            throw new InvalidIDException();
+        }
+
         Session session = sessionFactory.getCurrentSession();
+
         return session.get(DiscountCard.class, id);
     }
 
@@ -50,5 +56,22 @@ public class DiscountDAOImpl implements IDiscountDAO{
                 ("delete from DiscountCard where id =:id");
         query.setParameter("id", id);
         query.executeUpdate();
+    }
+
+    @Override
+    public DiscountCard getDiscountCardFromDataBaseByCardNumber(int cardNumber) {
+        Session session = sessionFactory.getCurrentSession();
+
+        if (cardNumber <= 0){
+            throw new InvalidDiscountCardException();
+        }
+
+        try {
+            return (DiscountCard) session
+                    .createQuery("from DiscountCard where numberCard =:number_card")
+                    .setParameter("number_card", cardNumber).getSingleResult();
+        }catch (Exception e){
+            return null;
+        }
     }
 }

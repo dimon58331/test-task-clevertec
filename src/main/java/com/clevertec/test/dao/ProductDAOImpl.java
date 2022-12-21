@@ -33,9 +33,14 @@ public class ProductDAOImpl implements IProductDAO {
 
     @Override
     public void saveProductToDataBase(Product product) {
-        if (product.isEmpty()){
+        if (product.isEmpty() || product.getDiscount() < 0 || product.getName().isEmpty()
+                || product.getDiscountQuantity() < 0){
             throw new InvalidProductException();
         }
+        if (product.getId() < 0){
+            throw new InvalidIDException();
+        }
+
         Session session = sessionFactory.getCurrentSession();
         session.saveOrUpdate(product);
     }
@@ -48,10 +53,6 @@ public class ProductDAOImpl implements IProductDAO {
 
         Session session = sessionFactory.getCurrentSession();
         Product product = session.get(Product.class, id);
-
-        if (product == null){
-            throw new InvalidProductException("The product with ID " + id + " does not find!");
-        }
 
         return product;
     }
